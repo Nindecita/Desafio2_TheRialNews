@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+<h1  class= "d-flex justify-content-center text-info" >Comentarios</h1>
+<div id="comments">
+  <% @comments.each do |comment| %>
+    <%= render comment %>
+    <p>
+      <%= link_to "Mostrar este comentario", comment %>
+    </p>
+  <% end %>
+</div>
+<div class= "d-flex justify-content-center" >
+  <%= link_to "Nuevo comentario", new_comment_path %>
+</div>

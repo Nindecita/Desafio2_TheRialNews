@@ -1,0 +1,9 @@
+<p style="color: green"><%= notice %></p>
+<%= render @notice %>
+<div>
+  <% if current_user.role == 'admin' %>
+    <%= link_to "Editar esta noticia", edit_notice_path(@notice) %>
+    <%= link_to "Eliminar esta noticia", @notice, method: :delete %>
+  <% end %>
+  <%= link_to "Volver a noticias", notices_path %>
+</div>

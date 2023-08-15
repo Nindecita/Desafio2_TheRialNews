@@ -1,0 +1,11 @@
+<div id="<%= dom_id notice %>">
+  <div class="card" style="width: 18rem;">
+    <%=image_tag notice.image, :class => "card-img-top"%>
+    <div class="card-body">
+      <h5 class="card-title"><%= notice.title %></h5>
+      <p class="card-text"><%= notice.description %></p>
+      <%= link_to "Mostrar esta noticia", notice, :class => "btn btn-primary" %>
+      <%= link_to "Nueva noticia", new_notice_path, :class => "btn btn-primary" %>
+    </div>
+  </div>
+</div>
