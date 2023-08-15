@@ -1,13 +1,21 @@
 <p style="color: green"><%= notice %></p>
 <h1  class= "d-flex justify-content-center text-info" >Comentarios</h1>
-<div id="comments">
-  <% @comments.each do |comment| %>
-    <%= render comment %>
+<% if current_user.role == "admin" %>
+  <div id="comments">
+    <% @comments.each do |comment| %>
+      <%= render comment %>
+      <p>
+        <%= link_to "Mostrar este comentario", comment, :class =>"link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" %>
+      </p>
+      <p>
+        <%= button_to "Eliminar este comentario", comment, method: :delete, :class =>"link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" %>
+      </p>
+    <% end %>
+  </div>
+<% else %>
+  <div class="d-flex justify-content-center text-info">
     <p>
-      <%= link_to "Mostrar este comentario", comment %>
+      Debes ser Administrador para ver este contenido
     </p>
-  <% end %>
-</div>
-<div class= "d-flex justify-content-center" >
-  <%= link_to "Nuevo comentario", new_comment_path %>
-</div>
+  </div>
+<% end %>

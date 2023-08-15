@@ -4,8 +4,24 @@
     <div class="card-body">
       <h5 class="card-title"><%= notice.title %></h5>
       <p class="card-text"><%= notice.description %></p>
-      <%= link_to "Mostrar esta noticia", notice, :class => "btn btn-primary" %>
-      <%= link_to "Nueva noticia", new_notice_path, :class => "btn btn-primary" %>
+      <div class="d-flex gap-2">
+        <div>
+          <%= link_to "Ver", notice, :class => "btn btn-primary btn-sm" %>
+        </div>
+        <% if user_signed_in? %>
+          <%if current_user.role == "admin" %>
+            <div>
+              <%= link_to "Nueva noticia", new_notice_path, :class => "btn btn-success btn-sm" %>
+            </div>
+            <div>
+              <%= link_to "Editar", edit_notice_path(notice),:class =>"btn btn-warning btn-sm" %>
+            </div>
+            <div>
+              <%= button_to "Eliminar", notice, method: :delete, :class =>"btn btn-danger btn-sm" %>
+            </div>
+          <%end%>
+        <%end%>
+      </div>
     </div>
   </div>
 </div>

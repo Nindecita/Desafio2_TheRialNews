@@ -1,6 +1,6 @@
 class NoticesController < ApplicationController
   before_action :set_notice, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, only: %i[create show edit update destroy ]
+  before_action :authenticate_user!, only: %i[create edit update destroy ]
   before_action :require_admin, only: %i[create update destroy edit]
 
   # GET /notices or /notices.json
@@ -10,6 +10,8 @@ class NoticesController < ApplicationController
 
   # GET /notices/1 or /notices/1.json
   def show
+    @comments = @notice.comments
+    @comment = @notice.comments.build
   end
 
   # GET /notices/new

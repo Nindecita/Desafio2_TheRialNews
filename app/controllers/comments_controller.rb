@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, only: %i[create edit update destroy ]
+  before_action :authenticate_user!, only: %i[index create edit update destroy ]
 
   # GET /comments or /comments.json
   def index
@@ -22,15 +22,14 @@ class CommentsController < ApplicationController
 
   # POST /comments or /comments.json
   def create
-    @comment = Comment.new(comment_params)
-
+    @notice = Notice.find(params[:notice_id])
+    @comment = @notice.comments.build(comment_params)
+    @comment.user_id = current_user.id
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to comment_url(@comment), notice: "Comment was successfully created." }
-        format.json { render :show, status: :created, location: @comment }
+        redirect_to @notice, notice: 'Su comentario agrego correctamente'
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
+        render 'notices/show'
       end
     end
   end

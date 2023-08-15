@@ -1,7 +1,7 @@
 <p style="color: green"><%= notice %></p>
 <%= render @comment %>
 <div>
-  <%= link_to "Editar este comentario", edit_comment_path(@comment) %> |
-  <%= link_to "Volver a comentarios", comments_path %>
-  <%= button_to "Eliminar este comentario", @comment, method: :delete %>
+  <%= link_to "Editar este comentario", edit_comment_path(@comment), :class =>"link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" %> |
+  <%= link_to "Volver a comentarios", comments_path, :class =>"link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" %>
+  <%= button_to "Eliminar este comentario", @comment, method: :delete, :class =>"link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" %>
 </div>

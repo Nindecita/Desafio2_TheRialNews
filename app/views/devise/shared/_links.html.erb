@@ -1,11 +1,11 @@
 <%- if controller_name != 'Sesiones' %>
-  <%= link_to "Log in", new_session_path(resource_name) %><br />
+  <%= link_to "Log in", new_session_path(resource_name), :class =>"link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" %><br />
 <% end %>
 <%- if devise_mapping.registerable? && controller_name != 'Registros' %>
-  <%= link_to "Sign up", new_registration_path(resource_name) %><br />
+  <%= link_to "Sign up", new_registration_path(resource_name), :class =>"link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" %><br />
 <% end %>
 <%- if devise_mapping.recoverable? && controller_name != 'Contraseñas' && controller_name != 'Registros' %>
-  <%= link_to "¿Olvidaste tu contraseña?", new_password_path(resource_name) %><br />
+  <%= link_to "¿Olvidaste tu contraseña?", new_password_path(resource_name), :class =>"link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" %><br />
 <% end %>
 <%- if devise_mapping.confirmable? && controller_name != 'Confirmaciones' %>
   <%= link_to "¿No recibió las instrucciones de confirmación?", new_confirmation_path(resource_name) %><br />

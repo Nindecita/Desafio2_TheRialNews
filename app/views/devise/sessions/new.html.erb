@@ -1,17 +1,17 @@
-<h2>Acceso</h2>
+<h2 class="text-info">Acceso</h2>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email, :class =>"text-white" %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
   <div class="field">
-    <%= f.label :Contraseña %><br />
+    <%= f.label :Contraseña, :class =>"text-white" %><br />
     <%= f.password_field :password, autocomplete: "Contraseña actual" %>
   </div>
   <% if devise_mapping.rememberable? %>
     <div class="field">
       <%= f.check_box :remember_me %>
-      <%= f.label :Recordarme %>
+      <%= f.label :Recordarme, :class =>"text-white" %>
     </div>
   <% end %>
   <div class="actions">

@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
-<h1 class= "d-flex justify-content-center text-info">Noticias</h1>
-<div class= "d-flex justify-content-center" id="notices">
+<h1 class= "d-flex justify-content-center text-info mb-5">Noticias</h1>
+<div class= "d-flex justify-content-center gap-3" id="notices">
   <% @notices.each do |notice| %>
     <%= render notice %>
   <% end %>
