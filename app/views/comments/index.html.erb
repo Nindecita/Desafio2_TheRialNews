@@ -5,7 +5,7 @@
     <% @comments.each do |comment| %>
       <%= render comment %>
       <p>
-        <%= link_to "Mostrar este comentario", comment, :class =>"link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" %>
+        <%= link_to "Ver este comentario", comment, :class =>"link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" %>
       </p>
       <p>
         <%= button_to "Eliminar este comentario", comment, method: :delete, :class =>"link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" %>

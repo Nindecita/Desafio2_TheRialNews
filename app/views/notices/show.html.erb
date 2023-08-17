@@ -1,16 +1,16 @@
 <p style="color: green"><%= notice %></p>
 <%= render @notice %>
-<div>
-  <h2>comentarios</h2>
+<div class="text-info">
+  <h2>Comentarios</h2>
   <ul>
     <%@comments.each do |comment|%>
-      <li><%= comment.comment %> <%= button_to "Eliminar este comentario", comment, method: :delete, :class =>"link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" %></li>
+      <li><%= comment.comment %> <%= button_to "Eliminar comentario", comment, method: :delete %></li>
     <% end %>
   </ul>
-  <h2>Agregar Comentario</h2>
+  <h2>Déjanos tu comentario</h2>
   <%= form_with(model: [@notice, @comment], local: true) do |f| %>
     <%= f.text_area :comment %>
-    <%= f.submit 'agregar comentario'%>
+    <%= f.submit 'Agregar comentario'%>
   <%end%>
-  <%= link_to "Volver a noticias", notices_path, :class =>"link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" %>
+  <%= link_to "Volver a noticias", notices_path, :class=> "btn btn-primary link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" %>
 </div>

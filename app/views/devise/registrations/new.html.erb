@@ -1,24 +1,24 @@
-<h2>Inscribirse</h2>
+<h2 class="text-info">Inscribirse</h2>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-  <div>
-    <%= f.label :name, style: "display: block" %>
+  <div class="text-info">
+    <%= f.label :Nombre, style: "display: block" %>
     <%= f.text_field :name%>
   </div>
-  <div class="field">
+  <div class="field text-info">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
-  <div class="field">
-    <%= f.label :password %>
+  <div class="field text-info">
+    <%= f.label :Contraseña %>
     <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <em>(<%= @minimum_password_length %> Carácteres mínimo)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "Nueva contraseña" %>
+    <%= f.password_field :Contraseña, autocomplete: "Nueva contraseña" %>
   </div>
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "nueva contraseña" %>
+  <div class="field text-info">
+    <%= f.label :Confirma_la_contraseña %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "Nueva contraseña" %>
   </div>
   <div class="actions">
     <%= f.submit "Inscribirse" %>

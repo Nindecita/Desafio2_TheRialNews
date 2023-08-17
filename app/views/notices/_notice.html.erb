@@ -6,18 +6,18 @@
       <p class="card-text"><%= notice.description %></p>
       <div class="d-flex gap-2">
         <div>
-          <%= link_to "Ver", notice, :class => "btn btn-primary btn-sm" %>
+          <%= link_to "Ver", notice, :class => "btn btn-primary btn-sm text-info" %>
         </div>
         <% if user_signed_in? %>
           <%if current_user.role == "admin" %>
             <div>
-              <%= link_to "Nueva noticia", new_notice_path, :class => "btn btn-success btn-sm" %>
+              <%= link_to "Nueva noticia", new_notice_path, :class => "btn btn-success btn-sm text-info" %>
             </div>
             <div>
-              <%= link_to "Editar", edit_notice_path(notice),:class =>"btn btn-warning btn-sm" %>
+              <%= link_to "Editar", edit_notice_path(notice),:class =>"btn btn-warning btn-sm text-info" %>
             </div>
             <div>
-              <%= button_to "Eliminar", notice, method: :delete, :class =>"btn btn-danger btn-sm" %>
+              <%= button_to "Eliminar", notice, method: :delete, :class =>"btn btn-danger btn-sm text-info" %>
             </div>
           <%end%>
         <%end%>

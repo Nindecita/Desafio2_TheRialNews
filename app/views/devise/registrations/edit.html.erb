@@ -9,19 +9,19 @@
     <div>Actualmente esperando confirmación para: <%= resource.unconfirmed_email %></div>
   <% end %>
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :Contraseña %> <i>(Déjalo en blanco si no quieres cambiarlo)</i><br />
     <%= f.password_field :password, autocomplete: "nueva contraseña" %>
     <% if @minimum_password_length %>
       <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+      <em><%= @minimum_password_length %> Carácteres mínimo</em>
     <% end %>
   </div>
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :Confirma_la_contraseña %><br />
     <%= f.password_field :password_confirmation, autocomplete: "nueva contraseña" %>
   </div>
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :Contraseña actual %> <i>(Necesitamos su contraseña actual para confirmar sus cambios)</i><br />
     <%= f.password_field :current_password, autocomplete: "Contraseña actual" %>
   </div>
   <div class="actions">
